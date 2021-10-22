@@ -1,0 +1,26 @@
+body {
+    background-color: cornflowerblue;
+}
+#bitcoininput {
+    border-style: solid;
+    position: relative;
+    width: 400px;
+    left: 200px;
+}
+#bitcoinform {
+    display: flex;
+    justify-content: center;
+}
+#bitcoin {
+    border-style: solid;
+    width: 800px;
+    height: 500px;
+}
+#snp500 {
+    position: absolute;
+    top: 208px;
+    left: 900px;
+    border-style: solid;
+    width: 1000px;
+    height: 500px;
+}
