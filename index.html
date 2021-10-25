@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Finance Bot</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/skeleton.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- Header -->
+  <header style="margin-top: 10%" id="titleArea">
+    <h1 id="titleMessage">
+      FinanceBot.io
+      <img src="./assets/images/bitcoingif.gif" alt="bitcoingif" height="50">
+    </h1>
+  </header>
+
+  <!-- Selectors -->
+  <div class="container">
+
+
+    <div class="row twelve columns" id="introArea">
+      <h5>
+      Welcome to our FinanceBot.io website!
+      <br>
+      <br>
+      This website will show you the historical value of Bitcoin and stock options. To begin:
+      <br>
+      <br>
+      1. Key in a Bitcoin Price Date to view the USD value at that moment in time.
+      <br>
+      <br>
+      2. Key in a Stock Option, such as IBM, UAL, GOOG, et.
+      <br>
+      <br>
+      3. Select your stock history date.
+      <br>
+      <br>
+      </h5>
+    </div>
+
+
+    <div class="row">
+      <!-- Bitcoin Price Date -->
+      <div class="four columns" style="margin-top: 5%">
+
+        <label for="bitcoinPriceDate">Bitcoin Price Date:</label>
+        <input class="u-full-width" type="text" placeholder="YYYY-MM-DD" id="bitcoinPriceDate">
+      </div>
+
+      <!-- Stock Option -->
+      <div class="four columns" style="margin-top: 5%">
+        <label for="stockOption">Stock Option:</label>
+        <input class="u-full-width" type="text" placeholder="IBM" id="stockOption">
+      </div>
+
+      <!-- Stock Historical Date -->
+      <div class="four columns" style="margin-top: 5%">
+        <label for="stockHistoricalDate">Stock Historical Date?</label>
+        <select class="u-full-width" id="stockHistoricalDate">
+          <option value="year1month1">1 Year and 1 Month Ago</option>
+          <option value="year1month2">1 Year and 2 Months Ago</option>
+          <option value="year1month3">1 Year and 3 Months Ago</option>
+          <option value="year1month4">1 Year and 4 Months Ago</option>
+          <option value="year1month5">1 Year and 5 Months Ago</option>
+          <option value="year1month6">1 Year and 6 Months Ago</option>
+          <option value="year1month7">1 Year and 7 Months Ago</option>
+          <option value="year1month8">1 Year and 8 Months Ago</option>
+          <option value="year1month9">1 Year and 9 Months Ago</option>
+          <option value="year1month10">1 Year and 10 Months Ago</option>
+          <option value="year1month11">1 Year and 11 Months Ago</option>
+          <option value="year1month12">2 Years Ago</option>
+          <option value="year2month1">2 Years and 1 Month Ago</option>
+          <option value="year2month2">2 Years and 2 Months Ago</option>
+          <option value="year2month3">2 Years and 3 Months Ago</option>
+          <option value="year2month4">2 Years and 4 Months Ago</option>
+          <option value="year2month5">2 Years and 5 Months Ago</option>
+          <option value="year2month6">2 Years and 6 Months Ago</option>
+          <option value="year2month7">2 Years and 7 Months Ago</option>
+          <option value="year2month8">2 Years and 8 Months Ago</option>
+          <option value="year2month9">2 Years and 9 Months Ago</option>
+          <option value="year2month10">2 Years and 10 Months Ago</option>
+          <option value="year2month11">2 Years and 11 Months Ago</option>
+          <option value="year2month12">3 Years Ago</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="row twelve columns" id="buttonSubmit">
+      <button class="button-primary" id="submitButton">Submit</button>
+      <br>
+      <br>
+    </div>
+
+    <div class="row">
+
+      <div class="one-half column" style="margin-top: 5%">
+        <h4>BitCoin Value:</h4>
+        <div class="one-half column" style="margin-top: 5%;" id="bitcoinValueBox">
+          <ul id="bitcoinValueList"></ul>
+        </div>
+      </div>
+
+      <div class="one-half column" style="margin-top: 5%">
+        <h4>Stock Value:</h4>
+        <div class="one-half column" style="margin-top: 5%;" id="stockValueBox">
+          <ul id="stockValueList"></ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="./assets/js/snp500.js"></script>
+</body>
+
+</html>
