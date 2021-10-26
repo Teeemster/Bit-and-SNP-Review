@@ -41,10 +41,10 @@
   <!-- Selectors -->
   <div class="container">
 
-
+<!-- Instruction Area -->
     <div class="row twelve columns" id="introArea">
       <h5>
-      Welcome to our FinanceBot.io website!
+      Welcome to the FinanceBot.io website!
       <br>
       <br>
       This website will show you the historical value of Bitcoin and stock options. To begin:
@@ -62,7 +62,7 @@
       </h5>
     </div>
 
-
+<!-- Search Query ROW -->
     <div class="row">
       <!-- Bitcoin Price Date -->
       <div class="four columns" style="margin-top: 5%">
@@ -74,67 +74,101 @@
       <!-- Stock Option -->
       <div class="four columns" style="margin-top: 5%">
         <label for="stockOption">Stock Option:</label>
-        <input class="u-full-width" type="text" placeholder="IBM" id="stockOption">
+        <input class="u-full-width" type="text" placeholder="Stock Symbol" id="stockOption">
       </div>
 
       <!-- Stock Historical Date -->
       <div class="four columns" style="margin-top: 5%">
         <label for="stockHistoricalDate">Stock Historical Date?</label>
         <select class="u-full-width" id="stockHistoricalDate">
-          <option value="year1month1">1 Year and 1 Month Ago</option>
-          <option value="year1month2">1 Year and 2 Months Ago</option>
-          <option value="year1month3">1 Year and 3 Months Ago</option>
-          <option value="year1month4">1 Year and 4 Months Ago</option>
-          <option value="year1month5">1 Year and 5 Months Ago</option>
-          <option value="year1month6">1 Year and 6 Months Ago</option>
-          <option value="year1month7">1 Year and 7 Months Ago</option>
-          <option value="year1month8">1 Year and 8 Months Ago</option>
-          <option value="year1month9">1 Year and 9 Months Ago</option>
-          <option value="year1month10">1 Year and 10 Months Ago</option>
-          <option value="year1month11">1 Year and 11 Months Ago</option>
-          <option value="year1month12">2 Years Ago</option>
-          <option value="year2month1">2 Years and 1 Month Ago</option>
-          <option value="year2month2">2 Years and 2 Months Ago</option>
-          <option value="year2month3">2 Years and 3 Months Ago</option>
-          <option value="year2month4">2 Years and 4 Months Ago</option>
-          <option value="year2month5">2 Years and 5 Months Ago</option>
-          <option value="year2month6">2 Years and 6 Months Ago</option>
-          <option value="year2month7">2 Years and 7 Months Ago</option>
-          <option value="year2month8">2 Years and 8 Months Ago</option>
-          <option value="year2month9">2 Years and 9 Months Ago</option>
-          <option value="year2month10">2 Years and 10 Months Ago</option>
-          <option value="year2month11">2 Years and 11 Months Ago</option>
-          <option value="year2month12">3 Years Ago</option>
+          <option value="year1month1">1 Month Ago</option>
+          <option value="year1month2">2 Months Ago</option>
+          <option value="year1month3">3 Months Ago</option>
+          <option value="year1month4">4 Months Ago</option>
+          <option value="year1month5">5 Months Ago</option>
+          <option value="year1month6">6 Months Ago</option>
+          <option value="year1month7">7 Months Ago</option>
+          <option value="year1month8">8 Months Ago</option>
+          <option value="year1month9">9 Months Ago</option>
+          <option value="year1month10">10 Months Ago</option>
+          <option value="year1month11">11 Months Ago</option>
+          <option value="year1month12">1 Years Ago</option>
+          <option value="year2month1">1 Year and 1 Month Ago</option>
+          <option value="year2month2">1 Year and 2 Months Ago</option>
+          <option value="year2month3">1 Year and 3 Months Ago</option>
+          <option value="year2month4">1 Year and 4 Months Ago</option>
+          <option value="year2month5">1 Year and 5 Months Ago</option>
+          <option value="year2month6">1 Year and 6 Months Ago</option>
+          <option value="year2month7">1 Year and 7 Months Ago</option>
+          <option value="year2month8">1 Year and 8 Months Ago</option>
+          <option value="year2month9">1 Year and 9 Months Ago</option>
+          <option value="year2month10">1 Year and 10 Months Ago</option>
+          <option value="year2month11">1 Year and 11 Months Ago</option>
+          <option value="year2month12">2 Years Ago</option>
         </select>
       </div>
 
     </div>
 
+    <!-- Initial Submit Button -->
     <div class="row twelve columns" id="buttonSubmit">
       <button class="button-primary" id="submitButton">Submit</button>
       <br>
       <br>
     </div>
 
-    <div class="row">
-
+    <!-- Value ROW -->
+    <div class="row" id ="valueArea">
+      <!-- Bitcoin Value -->
       <div class="one-half column" style="margin-top: 5%">
         <h4>BitCoin Value:</h4>
-        <div class="one-half column" style="margin-top: 5%;" id="bitcoinValueBox">
+        <div class="one-half column valueBox" style="margin-top: 5%;" id="bitcoinValueBox">
           <ul id="bitcoinValueList"></ul>
         </div>
       </div>
 
+      <!-- Stock Value -->
       <div class="one-half column" style="margin-top: 5%">
         <h4>Stock Value:</h4>
-        <div class="one-half column" style="margin-top: 5%;" id="stockValueBox">
+        <div class="one-half column valueBox" style="margin-top: 5%;" id="stockValueBox">
           <ul id="stockValueList"></ul>
         </div>
       </div>
+    </div>
 
+    <!-- Clear Button -->
+    <div class="row twelve columns" id="clearSubmit">
+      <button class="button-primary" id="clearButton" style="margin-top: 5%">Clear History</button>
+    </div>
+
+    <!-- Prior Search ROW -->
+    <div class="row">
+
+      <!-- Bitcoin Price Search Area -->
+      <div class="one-half column" style="margin-top: 5%">
+        <h4>BitCoin Prior Search:</h4>
+        <div class="one-half column valueBox" style="margin-top: 5%;" id="bitcoinPriorSearch">
+          <ul id="bitcoinPriorList"></ul>
+        </div>
+      </div>
+    
+      <!-- Stock Prior Search Area -->
+      <div class="one-half column" style="margin-top: 5%">
+        <h4>Stock Prior Search:</h4>
+        <div class="one-half column valueBox" style="margin-top: 5%;" id="stockPriorSearch">
+          <ul id="stockPriorList"></ul>
+        </div>
+      </div>
+    
     </div>
 
   </div>
+
+  <!-- Footer Area -->
+  <footer class="twelve columns" style="margin-top: 5%" id="footerArea">
+    <br>
+    <h2>📈 Made By Jonathan Beach and Carl Pastor 📈</h2>
+  </footer>
 
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

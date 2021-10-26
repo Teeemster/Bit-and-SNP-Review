@@ -37,12 +37,29 @@ submitButton.addEventListener("click", function () {
             return response.json();
         })
         .then(function (data) {
+            //Append Bitcoin Info
             console.log(data);
             var bitcoinPrice = data[0].price;
             console.log(bitcoinPrice);
+            var bitcoinDateArea = document.createElement("li");
             var bitcoinListArea = document.createElement("li");
-            bitcoinListArea.textContent = bitcoinPrice;
+            bitcoinDateArea.textContent = "Date: " + bitcoinPriceDate.value;
+            bitcoinListArea.textContent = "Price: " + bitcoinPrice;
+            bitcoinValueList.appendChild(bitcoinDateArea);
             bitcoinValueList.appendChild(bitcoinListArea);
+
+            //Store Prior Bitcoin Search
+            var newData = "Date: " + bitcoinPriceDate.value + " | Value: " + bitcoinPrice
+
+            if (localStorage.getItem('BitcoinInfo') == null) {
+                localStorage.setItem('BitcoinInfo', '[]');
+            }
+
+            var oldData = JSON.parse(localStorage.getItem('BitcoinInfo'))
+
+            oldData.push(newData)
+
+            localStorage.setItem('BitcoinInfo', JSON.stringify(oldData))
         });
 
 
@@ -66,6 +83,7 @@ submitButton.addEventListener("click", function () {
                 })
             }
 
+            //Append Stock Info
             var stockTimeList = document.createElement("li");
             var stockOpenList = document.createElement("li");
             var stockHighList = document.createElement("li");
@@ -94,10 +112,61 @@ submitButton.addEventListener("click", function () {
             stockValueList.appendChild(stockLowList);
             stockValueList.appendChild(stockCloseList);
             stockValueList.appendChild(stockVolumeList);
+
+            //Store Prior Stock Search
+            var newData = "Date: " + stockTime + " | " + "Stock: " + stockOptionInput + " | " + "Close: " + stockClose
+
+            if (localStorage.getItem('StockInfo') == null) {
+                localStorage.setItem('StockInfo', '[]');
+            }
+
+            var oldData = JSON.parse(localStorage.getItem('StockInfo'))
+
+            oldData.push(newData)
+
+            localStorage.setItem('StockInfo', JSON.stringify(oldData))
         });
 
 });
 
+//Retrieve and Append From Storage
+function storageInfo() {
+    //Bitcoin
+    if (localStorage.getItem('BitcoinInfo') != null) {
+        var bitcoinPriorArray = JSON.parse(localStorage.getItem('BitcoinInfo')) || [];
+
+        for (var i = 0; i < bitcoinPriorArray.length; i++) {
+            var bitcoinPriorList = document.querySelector('#bitcoinPriorSearch');
+            var bitcoinEl = document.createElement('li');
+            bitcoinEl.textContent = bitcoinPriorArray[i];
+            console.log(bitcoinPriorArray[i]);
+            bitcoinPriorList.appendChild(bitcoinEl);
+        }
+    }
+
+    //Stock Info
+    if (localStorage.getItem('StockInfo') != null) {
+        var stockPriorArray = JSON.parse(localStorage.getItem('StockInfo')) || [];
+
+        for (var i = 0; i < stockPriorArray.length; i++) {
+            var stockPriorList = document.querySelector('#stockPriorSearch');
+            var stockEl = document.createElement('li');
+            stockEl.textContent = stockPriorArray[i];
+            stockPriorList.appendChild(stockEl);
+        }
+    }
+};
+
+storageInfo();
+
+//Clear History Function
+clearButton = document.getElementById("clearButton")
+clearButton.addEventListener("click", function () {
+    localStorage.clear();
+    bitcoinPriorList = "";
+    stockPriorList = "";
+}
+);
 
 
 
