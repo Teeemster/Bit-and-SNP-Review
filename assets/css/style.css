@@ -1,0 +1,61 @@
+body {
+    background-color: #F8EEE7;
+}
+
+li {
+    list-style: none;
+}
+
+li::before {
+    content: "  💰 "
+}
+
+.valueBox {
+    border: 3px solid black;
+    background-color: white;
+}
+
+#titleArea {
+    display: inline;
+    text-align: center;
+}
+
+#titleMessage {
+    background-color: #94618e;
+    color: #F8EEE7;
+    border-bottom: 3px solid;
+    border-color: black;
+}
+
+#introArea {
+    display: inline;
+    text-align: center;
+    border-bottom: 3px solid;
+    border-color: black;
+}
+
+#buttonSubmit {
+    display: inline;
+    text-align: center;
+    border-bottom: 3px solid;
+    border-color: black;
+}
+
+#valueArea {
+    border-bottom: 3px solid;
+    border-color: black;
+    padding-bottom: 1cm;
+}
+
+#clearSubmit {
+    text-align: center;
+}
+
+#footerArea {
+    background-color: #94618e;
+    color: #F8EEE7;
+    border-top: 3px solid;
+    border-color: black;
+    display: inline;
+    text-align: center;
+}
