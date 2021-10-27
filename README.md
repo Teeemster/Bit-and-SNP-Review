@@ -1,4 +1,4 @@
-# Weather Dashboard
+# FinanceBot.io
 ## Description
 
 This application is intended to enable the user to view historical stock value and Bitcoin price data, side-by-side.
