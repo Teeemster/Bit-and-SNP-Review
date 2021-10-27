@@ -7,6 +7,9 @@ var stockHistoricalDate = document.getElementById("stockHistoricalDate");
 var stockValueBox = document.getElementById("stockValueBox");
 var stockValueList = document.getElementById("stockValueList");
 var bitcoinValueList = document.getElementById("bitcoinValueList");
+var bitcoinPriorList = document.querySelector('#bitcoinPriorSearch');
+var stockPriorList = document.querySelector('#stockPriorSearch');
+
 
 //API URLs
 var bitcoinRequestURL = "https://rest.coinapi.io/v1/trades/BITSTAMP_SPOT_BTC_USD/history?time_start="
@@ -18,6 +21,9 @@ submitButton.addEventListener("click", function () {
     //Clear Prior Text
     bitcoinValueList.textContent = "";
     stockValueList.textContent = "";
+    bitcoinPriorList.textContent = "";
+    stockPriorList.textContent = "";
+
 
     //User Input
     var bitcoinDateInput = bitcoinPriceDate.value + "T01";
@@ -60,6 +66,7 @@ submitButton.addEventListener("click", function () {
             oldData.push(newData)
 
             localStorage.setItem('BitcoinInfo', JSON.stringify(oldData))
+            storageInfo();
         });
 
 
@@ -125,18 +132,22 @@ submitButton.addEventListener("click", function () {
             oldData.push(newData)
 
             localStorage.setItem('StockInfo', JSON.stringify(oldData))
+            storageInfo();
         });
 
 });
 
 //Retrieve and Append From Storage
 function storageInfo() {
+    var bitcoinPriorList = document.querySelector('#bitcoinPriorSearch');
+    var stockPriorList = document.querySelector('#stockPriorSearch');
+    bitcoinPriorList.textContent = "";
+    stockPriorList.textContent = "";
     //Bitcoin
     if (localStorage.getItem('BitcoinInfo') != null) {
         var bitcoinPriorArray = JSON.parse(localStorage.getItem('BitcoinInfo')) || [];
 
         for (var i = 0; i < bitcoinPriorArray.length; i++) {
-            var bitcoinPriorList = document.querySelector('#bitcoinPriorSearch');
             var bitcoinEl = document.createElement('li');
             bitcoinEl.textContent = bitcoinPriorArray[i];
             console.log(bitcoinPriorArray[i]);
@@ -149,7 +160,6 @@ function storageInfo() {
         var stockPriorArray = JSON.parse(localStorage.getItem('StockInfo')) || [];
 
         for (var i = 0; i < stockPriorArray.length; i++) {
-            var stockPriorList = document.querySelector('#stockPriorSearch');
             var stockEl = document.createElement('li');
             stockEl.textContent = stockPriorArray[i];
             stockPriorList.appendChild(stockEl);
@@ -163,8 +173,8 @@ storageInfo();
 clearButton = document.getElementById("clearButton")
 clearButton.addEventListener("click", function () {
     localStorage.clear();
-    bitcoinPriorList = "";
-    stockPriorList = "";
+    bitcoinPriorList.textContent = "";
+    stockPriorList.textContent = "";
 }
 );
 
