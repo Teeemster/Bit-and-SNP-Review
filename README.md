@@ -6,7 +6,7 @@ This application is intended to enable the user to view historical stock value a
 ## Installation
 * None
 ## Usage
-This repository can be opened as an HTML within Github at the website: ttps://teeemster.github.io/Bit-and-SNP-Review/
+This repository can be opened as an HTML within Github at the website: https://teeemster.github.io/Bit-and-SNP-Review/
 
 The user can key in a date to assess Bitcoin price at a given point in time. The user can also, optionally, key in a stock option to see the value of that stock up to two years prior. Search history is retained at the bottom of the page for the user if they would like to view trends. Search history can also optionally be cleared if the user would like to begin a new search category.
 
